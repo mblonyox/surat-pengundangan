@@ -1,0 +1,24 @@
+{
+  "name": "surat-pengundangan",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.3",
+    "docx": "^7.4.1",
+    "file-saver": "^2.0.5",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.38.4"
+  }
+}
