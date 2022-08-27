@@ -57,16 +57,30 @@ export const createSurat = (context: {
           }),
           new Paragraph({
             children: [
-              new TextRun(
-                "Yth. Direktur Jenderal Peraturan Perundang-undangan"
-              ),
+              new TextRun({
+                text: "Yth. Direktur Jenderal Peraturan Perundang-undangan",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
-            children: [new TextRun("Kementerian Hukum dan Hak Asasi Manusia")],
+            children: [
+              new TextRun({
+                text: "Kementerian Hukum dan Hak Asasi Manusia",
+                font: "Arial",
+                size: "11pt",
+              }),
+            ],
           }),
           new Paragraph({
-            children: [new TextRun("Jakarta")],
+            children: [
+              new TextRun({
+                text: "Jakarta",
+                font: "Arial",
+                size: "11pt",
+              }),
+            ],
           }),
           new Paragraph({
             children: [],
@@ -76,9 +90,11 @@ export const createSurat = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                "Sesuai dengan ketentuan Pasal 81 sampai dengan Pasal 87 Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan Perundang-undangan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 13 Tahun 2022, diatur bahwa Peraturan Perundang-undangan wajib diundangkan. Dengan demikian Peraturan Menteri Keuangan yang telah ditetapkan oleh Menteri Keuangan wajib diundangkan dalam Berita Negara Republik Indonesia."
-              ),
+              new TextRun({
+                text: "Sesuai dengan ketentuan Pasal 81 sampai dengan Pasal 87 Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan Perundang-undangan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 13 Tahun 2022, diatur bahwa Peraturan Perundang-undangan wajib diundangkan. Dengan demikian Peraturan Menteri Keuangan yang telah ditetapkan oleh Menteri Keuangan wajib diundangkan dalam Berita Negara Republik Indonesia.",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -86,10 +102,17 @@ export const createSurat = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                `Berkenaan dengan hal tersebut di atas, dengan hormat disampaikan Peraturan Menteri Keuangan Nomor ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal} beserta naskah asli elektronik`
-              ),
-              new TextRun({ text: " (softcopy).", italics: true }),
+              new TextRun({
+                text: `Berkenaan dengan hal tersebut di atas, dengan hormat disampaikan Peraturan Menteri Keuangan Nomor ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal} beserta naskah asli elektronik`,
+                font: "Arial",
+                size: "11pt",
+              }),
+              new TextRun({
+                text: " (softcopy).",
+                font: "Arial",
+                size: "11pt",
+                italics: true,
+              }),
             ],
           }),
           new Paragraph({
@@ -97,9 +120,11 @@ export const createSurat = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                "Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur, oleh karenanya mohon dapat diproses pengundangannya dalam waktu yang tidak terlalu lama. Dalam hal di kemudian hari ditemukan permasalahan terkait substansi, kami bersedia untuk melakukan koordinasi dalam rangka sinkronisasi/penyelarasan dengan mengundang instansi/pihak terkait agar tidak ada lagi pertentangan dengan peraturan yang lebih tinggi, sejajar dan putusan pengadilan."
-              ),
+              new TextRun({
+                text: "Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur, oleh karenanya mohon dapat diproses pengundangannya dalam waktu yang tidak terlalu lama. Dalam hal di kemudian hari ditemukan permasalahan terkait substansi, kami bersedia untuk melakukan koordinasi dalam rangka sinkronisasi/penyelarasan dengan mengundang instansi/pihak terkait agar tidak ada lagi pertentangan dengan peraturan yang lebih tinggi, sejajar dan putusan pengadilan.",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -107,9 +132,11 @@ export const createSurat = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                "Demikian disampaikan untuk menjadi periksa, atas perhatian dan kerja samanya diucapkan terima kasih."
-              ),
+              new TextRun({
+                text: "Demikian disampaikan untuk menjadi periksa, atas perhatian dan kerja samanya diucapkan terima kasih.",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -176,6 +203,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "KEMENTERIAN KEUANGAN REPUBLIK INDONESIA",
+                        font: "Arial",
                         size: "13pt",
                         bold: true,
                       }),
@@ -202,6 +230,8 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "SEKRETARIAT JENDERAL",
+                        font: "Arial",
+                        size: "11pt",
                         bold: true,
                       }),
                     ],
@@ -223,6 +253,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "GEDUNG JUANDA I LANTAI 4, JALAN DR. WAHIDIN NOMOR 1, JAKARTA 10710, KOTAK POS 21 ",
+                        font: "Arial",
                         size: "7pt",
                       }),
                     ],
@@ -232,6 +263,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: " TELEPON (021) 3449230, 3852143; FAKSIMILE (021) 3512215; SITUS: WWW.KEMENKEU.GO.ID ",
+                        font: "Arial",
                         size: "7pt",
                       }),
                     ],
@@ -241,6 +273,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: " PUSAT KONTAK LAYANAN KEMENTERIAN KEUANGAN, TELEPON 134 DAN SUREL KEMENKEU.PRIME@KEMENKEU.GO.ID",
+                        font: "Arial",
                         size: "7pt",
                       }),
                     ],
@@ -296,7 +329,13 @@ const createPembuka = (nomor: string) => {
       children: [
         new Paragraph({
           alignment: options?.alignment,
-          children: [new TextRun(text)],
+          children: [
+            new TextRun({
+              text,
+              font: "Arial",
+              size: "11pt",
+            }),
+          ],
         }),
       ],
     });
@@ -384,7 +423,13 @@ const createKolomTtd = () =>
             children: [
               new Paragraph({
                 alignment: AlignmentType.RIGHT,
-                children: [new TextRun("a.n. ")],
+                children: [
+                  new TextRun({
+                    text: "a.n. ",
+                    font: "Arial",
+                    size: "11pt",
+                  }),
+                ],
               }),
             ],
           }),
@@ -394,8 +439,24 @@ const createKolomTtd = () =>
               type: WidthType.DXA,
             },
             children: [
-              new Paragraph({ children: [new TextRun("Sekretaris Jenderal")] }),
-              new Paragraph({ children: [new TextRun("Kepala Biro Hukum")] }),
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: "Sekretaris Jenderal",
+                    font: "Arial",
+                    size: "11pt",
+                  }),
+                ],
+              }),
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: "Kepala Biro Hukum",
+                    font: "Arial",
+                    size: "11pt",
+                  }),
+                ],
+              }),
             ],
           }),
         ],
@@ -424,6 +485,8 @@ const createKolomTtd = () =>
                 children: [
                   new TextRun({
                     text: "Ditandatangani secara elektronik",
+                    font: "Arial",
+                    size: "11pt",
                     color: "BFBFBF",
                   }),
                 ],
@@ -447,7 +510,15 @@ const createKolomTtd = () =>
               type: WidthType.DXA,
             },
             children: [
-              new Paragraph({ children: [new TextRun("Arief Wibisono")] }),
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: "Arief Wibisono",
+                    font: "Arial",
+                    size: "11pt",
+                  }),
+                ],
+              }),
             ],
           }),
         ],

@@ -53,11 +53,23 @@ export const createPengantar = (context: {
         children: [
           new Paragraph({
             alignment: AlignmentType.CENTER,
-            children: [new TextRun("NOTA DINAS")],
+            children: [
+              new TextRun({
+                text: "NOTA DINAS",
+                font: "Arial",
+                size: "11pt",
+              }),
+            ],
           }),
           new Paragraph({
             alignment: AlignmentType.CENTER,
-            children: [new TextRun("NOMOR: [@NomorND]")],
+            children: [
+              new TextRun({
+                text: "NOMOR: [@NomorND]",
+                font: "Arial",
+                size: "11pt",
+              }),
+            ],
           }),
           new Paragraph({
             alignment: AlignmentType.CENTER,
@@ -76,9 +88,11 @@ export const createPengantar = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                `Sehubungan dengan telah ditetapkannya Peraturan Menteri Keuangan ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal}, perlu kiranya segera diproses permohonan pengundangan pada Kementerian Hukum dan HAM. Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur.`
-              ),
+              new TextRun({
+                text: `Sehubungan dengan telah ditetapkannya Peraturan Menteri Keuangan ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal}, perlu kiranya segera diproses permohonan pengundangan pada Kementerian Hukum dan HAM. Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur.`,
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -86,9 +100,11 @@ export const createPengantar = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                "Berkenaan dengan hal tersebut di atas, terlampir kami sampaikan konsep Surat Bapak atas nama Sekretaris Jenderal kepada Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan HAM untuk mohon penetapan Bapak."
-              ),
+              new TextRun({
+                text: "Berkenaan dengan hal tersebut di atas, terlampir kami sampaikan konsep Surat Bapak atas nama Sekretaris Jenderal kepada Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan HAM untuk mohon penetapan Bapak.",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -96,9 +112,11 @@ export const createPengantar = (context: {
             spacing: { line: 300 },
             alignment: AlignmentType.JUSTIFIED,
             children: [
-              new TextRun(
-                "Demikian disampaikan, atas perhatian dan perkenan Bapak, kami ucapkan terima kasih."
-              ),
+              new TextRun({
+                text: "Demikian disampaikan, atas perhatian dan perkenan Bapak, kami ucapkan terima kasih.",
+                font: "Arial",
+                size: "11pt",
+              }),
             ],
           }),
           new Paragraph({
@@ -180,6 +198,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "KEMENTERIAN KEUANGAN REPUBLIK INDONESIA",
+                        font: "Arial",
                         size: "13pt",
                         bold: true,
                       }),
@@ -206,6 +225,8 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "SEKRETARIAT JENDERAL",
+                        font: "Arial",
+                        size: "11pt",
                         bold: true,
                       }),
                     ],
@@ -215,6 +236,8 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "BIRO HUKUM",
+                        font: "Arial",
+                        size: "11pt",
                         bold: true,
                       }),
                     ],
@@ -236,6 +259,7 @@ const createHeader = () =>
                     children: [
                       new TextRun({
                         text: "GEDUNG DJUANDA I LANTAI 14, JALAN DR. WAHIDIN RAYA NOMOR I, JAKARTA 10710, KOTAK POS 21; TELEPON (021) 3449230, 3813857 EXT. 6378; FAKSIMILE (021) 3811914; LAMAN:WWW.KEMENKEU.GO.ID",
+                        font: "Arial",
                         size: "7pt",
                       }),
                     ],
@@ -291,7 +315,13 @@ const createPembuka = (nomor: string) => {
       children: [
         new Paragraph({
           alignment: options?.alignment,
-          children: [new TextRun(text)],
+          children: [
+            new TextRun({
+              text,
+              font: "Arial",
+              size: "11pt",
+            }),
+          ],
         }),
       ],
     });
@@ -397,6 +427,8 @@ const createKolomTtd = () =>
                 children: [
                   new TextRun({
                     text: "Ditandatangani secara elektronik",
+                    font: "Arial",
+                    size: "11pt",
                     color: "BFBFBF",
                   }),
                 ],
@@ -420,7 +452,15 @@ const createKolomTtd = () =>
               type: WidthType.DXA,
             },
             children: [
-              new Paragraph({ children: [new TextRun("Budi Setiabudi")] }),
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: "Budi Setiabudi",
+                    font: "Arial",
+                    size: "11pt",
+                  }),
+                ],
+              }),
             ],
           }),
         ],
