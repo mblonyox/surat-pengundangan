@@ -101,7 +101,7 @@ export const createPengantar = (context: {
             alignment: AlignmentType.JUSTIFIED,
             children: [
               new TextRun({
-                text: "Berkenaan dengan hal tersebut di atas, terlampir kami sampaikan konsep Surat Bapak atas nama Sekretaris Jenderal kepada Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan HAM untuk mohon penetapan Bapak.",
+                text: "Berkenaan dengan hal tersebut di atas, terlampir kami sampaikan konsep Surat Ibu atas nama Sekretaris Jenderal kepada Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan HAM untuk mohon penetapan Ibu.",
                 font: "Arial",
                 size: "11pt",
               }),
@@ -113,7 +113,7 @@ export const createPengantar = (context: {
             alignment: AlignmentType.JUSTIFIED,
             children: [
               new TextRun({
-                text: "Demikian disampaikan, atas perhatian dan perkenan Bapak, kami ucapkan terima kasih.",
+                text: "Demikian disampaikan, atas perhatian dan perkenan Ibu, kami ucapkan terima kasih.",
                 font: "Arial",
                 size: "11pt",
               }),
@@ -455,7 +455,7 @@ const createKolomTtd = () =>
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: "Budi Setiabudi",
+                    text: "Indra Eka Putra",
                     font: "Arial",
                     size: "11pt",
                   }),

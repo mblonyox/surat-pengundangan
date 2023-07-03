@@ -5,7 +5,7 @@ import { saveAs } from "file-saver";
 import { createSurat } from "./utils/createSurat.js";
 import { createPengantar } from "./utils/createPengantar.js";
 
-const context = reactive({ nomor: "", tanggal: "", judul: "" });
+const context = reactive({ nomor: "", tanggal: "", judul: "", harmonNomor: "", harmonTanggal: "" });
 
 const onClickUnduhSurat = () => {
   const doc = createSurat(context);
@@ -40,25 +40,23 @@ const onClickUnduhPengantar = () => {
     <form>
       <div>
         <label for="nomor">Nomor PMK</label>
-        <input
-          id="nomor"
-          type="text"
-          placeholder="123/PMK.01/2022"
-          v-model="context.nomor"
-        />
+        <input id="nomor" type="text" placeholder="123/PMK.01/2022" v-model="context.nomor" />
       </div>
       <div>
         <label for="tanggal">Tanggal PMK</label>
-        <input
-          id="tanggal"
-          type="text"
-          placeholder="1 Januari 2022"
-          v-model="context.tanggal"
-        />
+        <input id="tanggal" type="text" placeholder="1 Januari 2022" v-model="context.tanggal" />
       </div>
       <div>
         <label for="judul">Judul PMK</label>
-        <textarea id="judul" type="text" v-model="context.judul"></textarea>
+        <textarea id="judul" type="text" placeholder="Keuangan Negara..." v-model="context.judul"></textarea>
+      </div>
+      <div>
+        <label for="harmon-nomor">Nomor Surat Harmonisasi</label>
+        <input id="harmon-nomor" type="text" placeholder="PPE.PP.05.01-001" v-model="context.harmonNomor" />
+      </div>
+      <div>
+        <label for="harmon-tanggal">Tanggal PMK</label>
+        <input id="harmon-tanggal" type="text" placeholder="1 Januari 2022" v-model="context.harmonTanggal" />
       </div>
     </form>
     <button @click="onClickUnduhSurat">
