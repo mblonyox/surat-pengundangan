@@ -23,12 +23,16 @@ export const createPengantar = (context: {
   judul: string;
 }) =>
   new Document({
+    background: {
+      color: "FFFFFF"
+    },
     styles: {
       default: {
         document: {
           run: {
             font: "Arial",
             size: "11pt",
+            color: "000000",
           },
         },
       },
@@ -58,6 +62,7 @@ export const createPengantar = (context: {
                 text: "NOTA DINAS",
                 font: "Arial",
                 size: "11pt",
+                color: "000000",
               }),
             ],
           }),
@@ -68,6 +73,7 @@ export const createPengantar = (context: {
                 text: "NOMOR: [@NomorND]",
                 font: "Arial",
                 size: "11pt",
+                color: "000000",
               }),
             ],
           }),
@@ -92,6 +98,7 @@ export const createPengantar = (context: {
                 text: `Sehubungan dengan telah ditetapkannya Peraturan Menteri Keuangan ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal}, perlu kiranya segera diproses permohonan pengundangan pada Kementerian Hukum dan HAM. Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur.`,
                 font: "Arial",
                 size: "11pt",
+                color: "000000",
               }),
             ],
           }),
@@ -104,6 +111,7 @@ export const createPengantar = (context: {
                 text: "Berkenaan dengan hal tersebut di atas, terlampir kami sampaikan konsep Surat Ibu atas nama Sekretaris Jenderal kepada Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan HAM untuk mohon penetapan Ibu.",
                 font: "Arial",
                 size: "11pt",
+                color: "000000",
               }),
             ],
           }),
@@ -116,6 +124,7 @@ export const createPengantar = (context: {
                 text: "Demikian disampaikan, atas perhatian dan perkenan Ibu, kami ucapkan terima kasih.",
                 font: "Arial",
                 size: "11pt",
+                color: "000000",
               }),
             ],
           }),
@@ -200,6 +209,7 @@ const createHeader = () =>
                         text: "KEMENTERIAN KEUANGAN REPUBLIK INDONESIA",
                         font: "Arial",
                         size: "13pt",
+                        color: "000000",
                         bold: true,
                       }),
                     ],
@@ -227,6 +237,7 @@ const createHeader = () =>
                         text: "SEKRETARIAT JENDERAL",
                         font: "Arial",
                         size: "11pt",
+                        color: "000000",
                         bold: true,
                       }),
                     ],
@@ -238,6 +249,7 @@ const createHeader = () =>
                         text: "BIRO HUKUM",
                         font: "Arial",
                         size: "11pt",
+                        color: "000000",
                         bold: true,
                       }),
                     ],
@@ -261,6 +273,7 @@ const createHeader = () =>
                         text: "GEDUNG DJUANDA I LANTAI 14, JALAN DR. WAHIDIN RAYA NOMOR I, JAKARTA 10710, KOTAK POS 21; TELEPON (021) 3449230, 3813857 EXT. 6378; FAKSIMILE (021) 3811914; LAMAN:WWW.KEMENKEU.GO.ID",
                         font: "Arial",
                         size: "7pt",
+                        color: "000000",
                       }),
                     ],
                   }),
@@ -280,6 +293,7 @@ const createHeader = () =>
                   bottom: {
                     style: BorderStyle.SINGLE,
                     size: 16,
+                    color: "000000",
                   },
                 },
                 children: [],
@@ -320,6 +334,7 @@ const createPembuka = (nomor: string) => {
               text,
               font: "Arial",
               size: "11pt",
+              color: "000000",
             }),
           ],
         }),
@@ -379,6 +394,7 @@ const createPembuka = (nomor: string) => {
               bottom: {
                 size: 16,
                 style: BorderStyle.SINGLE,
+                color: "000000",
               },
             },
             columnSpan: 3,
@@ -458,6 +474,7 @@ const createKolomTtd = () =>
                     text: "Indra Eka Putra",
                     font: "Arial",
                     size: "11pt",
+                    color: "000000",
                   }),
                 ],
               }),
