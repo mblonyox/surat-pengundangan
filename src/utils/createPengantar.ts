@@ -95,7 +95,7 @@ export const createPengantar = (context: {
             alignment: AlignmentType.JUSTIFIED,
             children: [
               new TextRun({
-                text: `Sehubungan dengan telah ditetapkannya Peraturan Menteri Keuangan ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal}, perlu kiranya segera diproses permohonan pengundangan pada Kementerian Hukum dan HAM. Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur.`,
+                text: `Sehubungan dengan telah ditetapkannya Peraturan Menteri Keuangan Nomor ${context.nomor} tentang ${context.judul} yang telah ditetapkan oleh Menteri Keuangan pada tanggal ${context.tanggal}, perlu kiranya segera diproses permohonan pengundangan pada Kementerian Hukum dan HAM. Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur.`,
                 font: "Arial",
                 size: "11pt",
                 color: "000000",
