@@ -133,7 +133,7 @@ export const createSurat = (context: {
             alignment: AlignmentType.JUSTIFIED,
             children: [
               new TextRun({
-                text: `Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur sebagaimana disampaikan dalam surat Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan Hak Asasi Manusia nomor ${context.harmonNomor} tanggal ${context.harmonTanggal}, oleh karenanya mohon dapat diproses pengundangannya dalam waktu yang tidak terlalu lama. Dalam hal di kemudian hari ditemukan permasalahan terkait substansi, kami bersedia untuk melakukan koordinasi dalam rangka sinkronisasi/penyelarasan dengan mengundang instansi/pihak terkait agar tidak ada lagi pertentangan dengan peraturan yang lebih tinggi, sejajar dan putusan pengadilan.`,
+                text: `Peraturan tersebut telah dilakukan proses harmonisasi oleh Kementerian Hukum dan HAM dan tidak terdapat permasalahan baik secara substansi dan/atau prosedur sebagaimana disampaikan dalam surat Direktur Jenderal Peraturan Perundang-undangan Kementerian Hukum dan Hak Asasi Manusia nomor ${context.harmonNomor} tanggal ${context.harmonTanggal}, oleh karenanya mohon dapat diproses pengundangannya dalam waktu yang tidak terlalu lama.`,
                 font: "Arial",
                 size: "11pt",
                 color: "000000",
