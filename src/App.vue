@@ -1,68 +1,67 @@
 <script setup lang="ts">
 import { reactive } from "vue";
-import { Packer } from "docx";
 import { saveAs } from "file-saver";
 import { createSurat } from "./utils/createSurat.js";
 import { createPengantar } from "./utils/createPengantar.js";
 
-const context = reactive({ nomor: "", tanggal: "", judul: "", harmonNomor: "", harmonTanggal: "" });
+const data = reactive({ nomor_pmk: "", tanggal_pmk: "", judul_pmk: "", nomor_harmon: "", tanggal_harmon: "" });
 
-const onClickUnduhSurat = () => {
-  const doc = createSurat(context);
+const onClickUnduhSurat = async () => {
+  const doc = await createSurat(data);
+  const blob = new Blob([doc], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" })
 
-  Packer.toBlob(doc).then((blob) => {
-    // saveAs from FileSaver will download the file
-    saveAs(
-      blob,
-      `Konsep Surat Pengundangan PMK ${context.nomor.replaceAll("/", "~")}.docx`
-    );
-  });
-};
-const onClickUnduhPengantar = () => {
-  const doc = createPengantar(context);
+  // saveAs from FileSaver will download the file
+  saveAs(
+    blob,
+    `Konsep Surat Pengundangan PMK ${data.nomor_pmk.replaceAll("/", "~")}.docx`
+  );
+}
 
-  Packer.toBlob(doc).then((blob) => {
-    // saveAs from FileSaver will download the file
-    saveAs(
-      blob,
-      `Konsep Pengantar Pengundangan PMK ${context.nomor.replaceAll(
-        "/",
-        "~"
-      )}.docx`
-    );
-  });
+const onClickUnduhPengantar = async () => {
+  const doc = await createPengantar(data);
+  const blob = new Blob([doc], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" })
+
+  // saveAs from FileSaver will download the file
+  saveAs(
+    blob,
+    `Konsep Pengantar Pengundangan PMK ${data.nomor_pmk.replaceAll(
+      "/",
+      "~"
+    )}.docx`
+  );
 };
 </script>
 
 <template>
   <main class="container">
-    <h1>Generator Surat Pengundangan</h1>
+    <hgroup>
+      <h1>Generator Surat Pengundangan</h1>
+      <p>v0.1.0 - 30 Desember 2024</p>
+    </hgroup>
     <form>
       <div>
-        <label for="nomor">Nomor PMK</label>
-        <input id="nomor" type="text" placeholder="123 TAHUN 2023" v-model="context.nomor" />
+        <label for="nomor_pmk">Nomor PMK</label>
+        <input id="nomor_pmk" type="text" placeholder="123 Tahun 2025" v-model="data.nomor_pmk" />
       </div>
       <div>
-        <label for="tanggal">Tanggal PMK</label>
-        <input id="tanggal" type="text" placeholder="1 Januari 2023" v-model="context.tanggal" />
+        <label for="tanggal_pmk">Tanggal PMK</label>
+        <input id="tanggal_pmk" type="text" placeholder="1 Januari 2025" v-model="data.tanggal_pmk" />
       </div>
       <div>
-        <label for="judul">Judul PMK</label>
-        <textarea id="judul" type="text" placeholder="Keuangan Negara..." v-model="context.judul"></textarea>
+        <label for="judul_pmk">Judul PMK</label>
+        <textarea id="judul_pmk" type="text" placeholder="Keuangan Negara..." v-model="data.judul_pmk"></textarea>
       </div>
       <div>
-        <label for="harmon-nomor">Nomor Surat Harmonisasi</label>
-        <input id="harmon-nomor" type="text" placeholder="PPE.PP.05.01-001" v-model="context.harmonNomor" />
+        <label for="nomor_pmk">Nomor Surat Harmonisasi</label>
+        <input id="nomor_pmk" type="text" placeholder="PPE.PP.01.05-001" v-model="data.nomor_harmon" />
       </div>
       <div>
-        <label for="harmon-tanggal">Tanggal Surat Harmonisasi</label>
-        <input id="harmon-tanggal" type="text" placeholder="1 Januari 2023" v-model="context.harmonTanggal" />
+        <label for="tanggal_harmon">Tanggal Surat Harmonisasi</label>
+        <input id="tanggal_harmon" type="text" placeholder="1 Januari 2025" v-model="data.tanggal_harmon" />
       </div>
     </form>
-    <button @click="onClickUnduhSurat">
-      Unduh Surat Permohonan Pengundangan
-    </button>
-    <button @click="onClickUnduhPengantar">Unduh Nota Dinas Pengantar</button>
+    <input type="button" @click="onClickUnduhSurat" value="Unduh Surat Permohonan" />
+    <input type="button" class="secondary" @click="onClickUnduhPengantar" value="Unduh Nota Pengantar" />
   </main>
 </template>
 
@@ -72,7 +71,7 @@ main {
   padding-bottom: 2rem;
 }
 
-h1 {
+hgroup {
   text-align: center;
 }
 </style>
